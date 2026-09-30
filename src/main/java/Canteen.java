@@ -14,10 +14,7 @@ public class Canteen {
         this.tokenGenerator = tokenGenerator;
     }
 
-    public String placeOrder(String sid, String[] items, int[] qty, String pay, int pastOrders) {
-        if (sid == null || sid.isBlank()) {
-            throw new IllegalArgumentException("Student id is required");
-        }
+    public String placeOrder(String[] items, int[] qty, String pay, int pastOrders) {
         PaymentMethod paymentMethod = PaymentMethod.from(pay);
         double total = orderService.calculateTotal(items, qty, paymentMethod, pastOrders);
         orderService.charge(total);
