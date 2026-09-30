@@ -1,14 +1,8 @@
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LegacyBehaviorTest {
-    @BeforeEach
-    void resetCounter() {
-        Canteen.tokenCounter = 0;
-    }
-
     @Test
     void cashOrderKeepsLegacyPrice() {
         Canteen canteen = new Canteen();
